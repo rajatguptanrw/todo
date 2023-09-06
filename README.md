@@ -4,7 +4,7 @@
 Run `ng serve` for a dev server front-end
 
 
-## Run mock server server
+## Run mock server
 
 Run `npm run mock:server` for the mock -server backend
 
