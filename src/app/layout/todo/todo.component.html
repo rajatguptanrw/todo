@@ -1,0 +1,16 @@
+<div class="grid">
+    <ng-container *ngFor="let todo of todoList">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{todo.title}}</h5>
+                <p class="card-text">{{todo.description}}</p>
+                <a class="btn btn-primary btn-sm"
+                (click)="onUpdateClick(todo)">Update Todo</a>
+                <a class="btn btn-danger btn-sm ml-2"
+                (click)="onDeleteClick(todo)">Delete Todo</a>
+            </div>
+        </div>
+
+    </ng-container>
+
+</div>
