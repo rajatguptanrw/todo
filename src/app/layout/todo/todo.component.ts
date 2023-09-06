@@ -41,6 +41,14 @@ export class TodoComponent implements OnInit {
       }
     })
   }
+  onMarkAsDone(todo: any) {
+    todo.isDone = true;
+    this.todoService.updateTodoById(todo.id).subscribe(res => {
+      if (res !== null && res !== undefined) {
+        this.getAllTodos();
+      }
+    })
+  }
 
 
 }

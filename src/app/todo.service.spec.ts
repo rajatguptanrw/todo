@@ -27,8 +27,8 @@ describe('TodoService', () => {
 
   it('should retrieve all todos', () => {
     const dummyTodos: Todo[] = [
-      { id: '1', title: 'Todo 1', description: 'Lorem ipsum' },
-      { id: '2', title: 'Todo 2', description: 'Lorem ipsum' }
+      { id: '1', title: 'Todo 1', description: 'Lorem ipsum', isDone: false },
+      { id: '2', title: 'Todo 2', description: 'Lorem ipsum', isDone: false }
     ];
 
     service.getAllTodo().subscribe((todos: any) => {
@@ -41,7 +41,7 @@ describe('TodoService', () => {
   });
 
   it('should add a new todo', () => {
-    const dummyTodo: Todo = { id: '3', title: 'New Todo', description: 'Lorem ipsum' };
+    const dummyTodo: Todo = { id: '3', title: 'New Todo', description: 'Lorem ipsum', isDone: false  };
     service.addTodo(dummyTodo).subscribe((response: any) => {
       expect(response).toEqual(dummyTodo);
     });
@@ -52,7 +52,7 @@ describe('TodoService', () => {
   });
 
   it('should update a todo', () => {
-    const updateTodo: Todo = { id: '1', title: 'Updated Todo', description: 'Lorem ipsum' };
+    const updateTodo: Todo = { id: '1', title: 'Updated Todo', description: 'Lorem ipsum', isDone: false };
 
     service.updateTodoById(updateTodo).subscribe((response: any) => {
       expect(response).toEqual(updateTodo);
@@ -65,7 +65,7 @@ describe('TodoService', () => {
 
   it('should retrieve a todo by id', () => {
     const todoId = '1';
-    const dummyTodo: Todo = { id: todoId, title: 'Todo 1', description: 'Lorem ipsum ' };
+    const dummyTodo: Todo = { id: todoId, title: 'Todo 1', description: 'Lorem ipsum ', isDone: false };
 
     service.getTodoById(todoId).subscribe((todo: any) => {
       expect(todo).toEqual(dummyTodo);

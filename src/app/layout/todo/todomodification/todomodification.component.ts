@@ -15,7 +15,8 @@
     todo: Todo = {
       id: '',
       title: '',
-      description: ''
+      description: '',
+      isDone: false
     }
     constructor(private route: ActivatedRoute,
       public todoService: TodoService) {
@@ -34,7 +35,6 @@
       if (this.todo.title && this.todo.description) {
         if (this.id) {
           this.todoService.updateTodoById(this.todo).subscribe(res => {
-            console.log(res);
             this.resetTodo();
           })
         }
@@ -51,7 +51,8 @@
       this.todo = {
         id: '',
         title: '',
-        description: ''
+        description: '',
+        isDone: false
       };
     }
 

@@ -4,10 +4,10 @@
             <div class="card-body">
                 <h5 class="card-title">{{todo.title}}</h5>
                 <p class="card-text">{{todo.description}}</p>
-                <a class="btn btn-primary btn-sm"
-                (click)="onUpdateClick(todo)">Update Todo</a>
-                <a class="btn btn-danger btn-sm ml-2"
-                (click)="onDeleteClick(todo)">Delete Todo</a>
+                <p class="card-text">{{todo?.isDone ? 'Done': 'Not Done'}}</p>
+                <a class="btn btn-primary btn-sm" (click)="onUpdateClick(todo)">Update Todo</a>
+                <a class="btn btn-danger btn-sm ml-2" (click)="onDeleteClick(todo)">Delete Todo</a>
+                <a class="btn btn-info btn-sm ml-2" (click)="onMarkAsDone(todo)">Mark as done</a>
             </div>
         </div>
 
